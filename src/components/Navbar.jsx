@@ -32,7 +32,7 @@ export default function Navbar() {
             <div className="flex space-x-2 lg:space-x-8">
                 {
                     Menus.map(item => (    
-                       <Link key={item} className="text-slate-900 font-mono text-lg" to={`${item.link}`}>{item.name}</Link>
+                       <Link key={item.name} className="text-slate-900 font-mono text-lg" to={`${item.link}`}>{item.name}</Link>
                     ))
                 }
             </div>
@@ -62,8 +62,8 @@ export default function Navbar() {
                 {
                     Menus.map(item => (    
                      <DisclosureButton
-                        as="a"
                         key={item.name} 
+                        as="a"
                         className="text-slate-900 font-mono text-lg block" 
                         href={`${item.link}`}> 
                          {item.name}

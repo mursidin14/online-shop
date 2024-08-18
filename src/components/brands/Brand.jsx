@@ -7,7 +7,7 @@ import Brands_5 from '../../assets/brands/brand_5.svg';
 export default function Brand() {
   return (
     <div className="bg-gradient-to-b from-gray-3 to-gray-2">
-        <div className="flex justify-center items-center space-x-6">
+        <div className="flex justify-center items-center space-x-6 flex-wrap">
             <img className='p-4' src={Brands_1} alt='brand_1' />
             <img className='p-4' src={Brands_2} alt='brand_2' />
             <img className='p-4' src={Brands_3} alt='brand_3' />
