@@ -34,11 +34,11 @@ export default function SinggleFavorite() {
         <div className="w-1/3">
           <img className="z-0" src={Favorite_1} alt="favorite_1" />
         </div>
-        <div>
-            <img src={Favorite_2} alt="favorite_2" />
+        <div className="w-1/3">
+            <img className="z-0" src={Favorite_2} alt="favorite_2" />
         </div>
-        <div>
-            <img src={Favorite_3} alt="favorite_3" />
+        <div className="w-1/3">
+            <img className="z-0" src={Favorite_3} alt="favorite_3" />
         </div>
       </Slider>
   )
