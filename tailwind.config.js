@@ -21,7 +21,10 @@ export default {
         40: '#646464',
       },
       'white': '#FFFFFF',
-      'black_1': '#0D1222',
+      'dark': {
+        10: '#0D1222',
+        20: '#393E46'
+      }
     },
     extend: {},
   },
