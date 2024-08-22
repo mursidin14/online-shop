@@ -1,4 +1,7 @@
 import Slider from "react-slick";
+import Category_1 from '../../assets/categories/category_1.png';
+import Category_2 from '../../assets/categories/category_2.png';
+import Category_3 from '../../assets/categories/category_3.png';
 
 
 function Arrow(props) {
@@ -19,9 +22,9 @@ export default function SingleCarousel() {
         lazyLoad: true,
         infinite: true,
         speed: 500,
-        slidesToShow: 2,
+        slidesToShow: 1,
         slidesToScroll: 1,
-        initialSlide: 2,
+        initialSlide: 1,
         focusOnSelect: true,
         nextArrow: <Arrow />,
         prevArrow: <Arrow />,
@@ -38,17 +41,14 @@ export default function SingleCarousel() {
 
   return (
     <Slider {...settings}>
-        <div className="w-1/2">
-          <h3 className="border border-gray-3 rounded mx-auto my-16 text-center py-1 w-40 text-base font-bold">Electronics</h3>
+        <div className="w-1/3">
+          <img src={Category_1} alt="favorite_1" />
         </div>
-        <div>
-          <h3 className="border border-gray-3 rounded mx-auto my-16 text-center py-1 w-40 text-base font-bold">jewelery</h3>
+        <div className="w-1/3">
+          <img src={Category_2} alt="favorite_1" />
         </div>
-        <div>
-          <h3 className="border border-gray-3 rounded mx-auto my-16 text-center py-1 w-40 text-base font-bold">mens clothing</h3>
-        </div>
-        <div>
-          <h3 className="border border-gray-3 rounded mx-auto my-16 text-center py-1 w-40 text-base font-bold">womens clothing</h3>
+        <div className="w-1/3">
+          <img src={Category_3} alt="favorite_1" />
         </div>
       </Slider>
   )
