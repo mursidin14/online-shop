@@ -5,13 +5,13 @@ import Start from "../icons/Start";
 
 export default function Product() {
 
-    const { products } = useUserContext()
+    const { products, selectedCategory, productByCategory } = useUserContext()
 
   return (
     <div className="w-full sm:max-w-6xl mx-auto flex justify-center">
         <div className="grid gap-4 grid-cols-1 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2">
         {
-          products.map((product) => (
+          (selectedCategory ? productByCategory : products).map((product) => (
             <Card
                 key={product.id}
                 className="max-w-64"
