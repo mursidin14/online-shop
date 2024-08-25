@@ -6,12 +6,12 @@ export default function ShopeSidebar() {
 
 
   return (
-    <div aria-label="Product categories" className="space-y-0">
+    <div aria-label="Product categories" className="space-y-0 my-10">
       {categories.map((category, index) => (
         <div
           key={index} 
           onClick={() => handleCategoryClick(category)} 
-          className={`group relative flex cursor-pointer rounded-lg bg-white/5 py-4 px-5 shadow-md transition focus:outline-none ${selectedCategory === category ? 'bg-blue-400' : ''}`}
+          className={`group relative flex cursor-pointer rounded-lg bg-white/5 py-4 px-5 shadow-md transition focus:outline-none ${selectedCategory === category ? 'bg-blue-30' : ''}`}
         >
           <div className="flex w-full items-center justify-between">
             <div className="text-sm/6">
@@ -19,7 +19,7 @@ export default function ShopeSidebar() {
                 {category}
               </p>
             </div>
-            <CheckCircleIcon className={`size-6 fill-white transition ${selectedCategory === category ? 'opacity-100' : 'opacity-0'}`} />
+            <CheckCircleIcon className={`size-6 fill-white transition ${selectedCategory === category ? 'opacity-100' : 'opacity-0'} bg-blue-30`} />
           </div>
         </div>
       ))}

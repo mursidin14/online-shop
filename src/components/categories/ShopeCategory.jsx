@@ -4,7 +4,7 @@ import ShopeSidebar from "../sidebars/ShopeSidebar";
 
 export default function ShopeCategory() {
   return (
-    <div className="w-full mx-3 sm:mx-auto sm:max-w-6xl">
+    <div className="w-full mx-3 sm:mx-auto sm:max-w-6xl my-10">
         <div className="flex justify-between">
             <div className="w-1/4">
                 <ShopeSidebar />

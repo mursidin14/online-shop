@@ -3,7 +3,7 @@ import ShopeCarousel from "../carousels/ShopeCarousel";
 
 export default function ShopBanner() {
   return (
-      <div className="">
+      <div className="z-0">
         <div className="bg-gradient-to-b from-blue-30 to-indigo-30 mt-44">
             <div className="w-full mx-auto sm:max-w-6xl">
                 <div className="flex flex-wrap justify-beetween h-80 pt-3"> 
