@@ -3,6 +3,7 @@ import Home from "../pages/Home";
 import Shop from "../pages/Shop";
 import AbouteUs from "../pages/AbouteUs";
 import Contact from "../pages/Contact";
+import DetailProduct from "../pages/DetailProduct";
 import Layout from "../layout/Layout";
 import NotFound from "../pages/NotFound";
 
@@ -25,6 +26,10 @@ export const router = createBrowserRouter([
             {
                 path:'/contact',
                 element: <Contact />
+            },
+            {
+                path:'/products/:id',
+                element: <DetailProduct />
             }
         ]
     },

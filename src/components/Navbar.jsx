@@ -25,7 +25,7 @@ export default function Navbar() {
        </DisclosureButton>
       </div>
         <Link to="/" className="flex items-center">
-            <img src="logo.svg" alt="logo" />
+            <img src="/logo.svg" alt="logo" />
             <p className="font-bold font-sans ml-2 text-md">store</p>
         </Link>
         <div className="hidden sm:ml-6 sm:block">

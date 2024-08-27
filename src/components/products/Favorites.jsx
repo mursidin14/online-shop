@@ -38,7 +38,7 @@ export default function Favorites() {
                             <p className="text-lg text-white font-bold">Size</p>
                             <div className="flex space-x-2">
                                 {
-                                  size.map((index, item) => {
+                                  size.map((item, index) => {
                                     <p key={index} onClick={() => handleClick(index)} className={`${isSize === index ? "text-blue-50" : ""} text-lg font-bold p-3 rounded bg-white`}>{item}</p>
                                   })
                                 }

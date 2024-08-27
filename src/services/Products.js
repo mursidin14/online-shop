@@ -17,11 +17,21 @@ const getProductByCategory = (slug) =>
         console.error('Failed to fetch productsByCategory:', error);
         throw error;
     });
+
+const getProductById = (id) =>
+    httpClient
+    .get(`/products/${id}`)
+    .then(response => response.data)
+    .catch(error => {
+        console.error('Fieled to fetch productById:', error);
+        throw error;
+    })
         
 
 const ProductsData = {
     getAllProducts,
-    getProductByCategory
+    getProductByCategory,
+    getProductById
 }
 
 export default ProductsData;
