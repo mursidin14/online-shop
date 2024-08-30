@@ -10,9 +10,11 @@ export default function UserContextProvider({children}) {
     const [categories, setCategories] = useState([]);
     const [productByCategory, setProductByCategory] = useState([]);
     const [selectedCategory, setSelectedCategory] = useState('');
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         const getAllData = async () => {
+            setLoading(true);
             try {
                 // all product
                 const responseProducts = await ProductsData.getAllProducts();
@@ -24,6 +26,8 @@ export default function UserContextProvider({children}) {
 
             } catch (error) {
                 console.error('Failed to fetch products:', error);
+            } finally {
+                setLoading(false);
             }
         };
         getAllData();
@@ -31,14 +35,17 @@ export default function UserContextProvider({children}) {
 
     useEffect(() => {
         const getProductByCategory = async () => {
+            setLoading(true);
             try {
-                if (selectedCategory) {
-                    const responseProductByCategory = await ProductsData.getProductByCategory(selectedCategory);
-                    setProductByCategory(responseProductByCategory);
+                if(selectedCategory) {
+                 const responseProductByCategory = await ProductsData.getProductByCategory(selectedCategory);
+                 setProductByCategory(responseProductByCategory);
                 }
             } catch (error) {
                 console.error('Failed to fetch products by category:', error);
-            }
+            } finally {
+                setLoading(false);
+            }   
         };
         getProductByCategory();
     }, [selectedCategory]);
@@ -56,6 +63,7 @@ export default function UserContextProvider({children}) {
             productByCategory,
             selectedCategory,
             handleCategoryClick,
+            loading
         }}
     >
         {children}

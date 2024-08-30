@@ -1,13 +1,17 @@
 import { RouterProvider } from "react-router-dom";
 import { router } from "./router";
 import UserContextProvider from "./context/UserContext";
+import { Suspense } from "react";
+import LoadScreen from "./components/loads/LoadScreen";
 
 
 function App() {
 
   return (
       <UserContextProvider>
-        <RouterProvider router={router} />
+        <Suspense fallback={<LoadScreen />}>
+          <RouterProvider router={router} />
+        </Suspense>
       </UserContextProvider>
   )
 }

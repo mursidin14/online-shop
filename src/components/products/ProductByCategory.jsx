@@ -6,16 +6,18 @@ import LoadProducts from "../loads/LoadProducts";
 
 export default function Product() {
 
-    const { products, loading } = useUserContext();
+    const { selectedCategory, productByCategory, products, loading } = useUserContext()
 
   return (
     <div className="w-full sm:max-w-6xl mx-auto flex justify-center">
-        {loading && <LoadProducts />}
+        {
+          loading && <LoadProducts />
+        }
         <div className="grid gap-4 grid-cols-1 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2">
         {
-           products.map((product) =>  (
+             (selectedCategory ? productByCategory : products).map((product) => (
             <Link key={product.id} to={`/products/${product.id}`}>
-             <Card
+            <Card
                 className="max-w-64"
                 imgAlt="Apple Watch Series 7 in colors pink, silver, and black"
                 imgSrc={product.image}
@@ -31,10 +33,9 @@ export default function Product() {
               <p className="text-sm">{`${product.description ? product.description.substring(0, 100) + "..." : product.description}`}</p>
               <Start span={"5.0"} />
         </Card>
-            </Link>
-              
-            ))
-         }
+        </Link>
+                ))
+            }
         </div>
     </div>
   )

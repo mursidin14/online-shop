@@ -1,6 +1,6 @@
 import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/react'
 import { ShoppingBagIcon, HeartIcon, UserIcon, MagnifyingGlassIcon, Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
-import { Link } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 
 const Menus = [
     {name:"Home", link:"/", current:true},
@@ -32,7 +32,13 @@ export default function Navbar() {
             <div className="flex space-x-2 lg:space-x-8">
                 {
                     Menus.map(item => (    
-                       <Link key={item.name} className="text-slate-900 font-mono text-lg" to={`${item.link}`}>{item.name}</Link>
+                       <NavLink 
+                        key={item.name} 
+                        className={({isActive}) => isActive ? "text-blue-30 font-bold text-lg" : "text-slate-900 font-mono text-lg"} 
+                        to={`${item.link}`}
+                        >
+                            {item.name}
+                        </NavLink>
                     ))
                 }
             </div>
@@ -61,13 +67,12 @@ export default function Navbar() {
             <div className="space-y-1 px-2 pb-3 pt-2">
                 {
                     Menus.map(item => (    
-                     <DisclosureButton
+                     <NavLink
                         key={item.name} 
-                        as="a"
-                        className="text-slate-900 font-mono text-lg block" 
-                        href={`${item.link}`}> 
+                        className={({isActive}) => isActive ? "text-blue-30 font-bold text-lg block" : "text-slate-900 font-mono text-lg block"} 
+                        to={`${item.link}`}> 
                          {item.name}
-                      </DisclosureButton>
+                      </NavLink>
                     ))
                 }
             </div>

@@ -1,4 +1,4 @@
-import Product from "../products/Product";
+import ProductByCategory from "../products/ProductByCategory";
 import ShopeSidebar from "../sidebars/ShopeSidebar";
 
 
@@ -10,7 +10,7 @@ export default function ShopeCategory() {
                 <ShopeSidebar />
             </div>
             <div className="w-2/3">
-                <Product />
+                <ProductByCategory />
             </div>
         </div>
     </div>

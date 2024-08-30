@@ -5,6 +5,7 @@ import { MinusIcon, PlusIcon, ShoppingBagIcon } from "@heroicons/react/24/outlin
 import { useParams } from "react-router-dom";
 import ProductsData from "../services/Products";
 import { Card } from "flowbite-react";
+import LoadProductDetail from "../components/loads/LoadProductDetail";
 
 
 export default function DetailProduct() {
@@ -105,7 +106,7 @@ useEffect(() => {
                   </div>
               </div>
         </div>
-        ) : <p>Loading...</p>
+        ) : <LoadProductDetail />
     }
     </div>
   )

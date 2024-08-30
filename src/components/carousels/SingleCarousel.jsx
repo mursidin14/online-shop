@@ -45,10 +45,10 @@ export default function SingleCarousel() {
           <img src={Category_1} alt="favorite_1" />
         </div>
         <div className="w-1/3">
-          <img src={Category_2} alt="favorite_1" />
+          <img src={Category_2} alt="favorite_2" />
         </div>
         <div className="w-1/3">
-          <img src={Category_3} alt="favorite_1" />
+          <img src={Category_3} alt="favorite_3" />
         </div>
       </Slider>
   )

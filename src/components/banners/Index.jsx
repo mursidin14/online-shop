@@ -1,4 +1,5 @@
 import Banner from '../../assets/banner.png';
+import { Link } from 'react-router-dom';
 
 export default function Index() {
   return (
@@ -12,9 +13,11 @@ export default function Index() {
                     <p className="text-lg text-gray-10 text-base">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eget gravida leo, nec iaculis diam. Nam bibendum mi sed sem finibus ullamcorper.
                     </p>
-                    <button className="text-indigo-30 px-10 py-3 bg-white font-bold text-lg">
-                        Shop Now
-                    </button>
+                    <Link to={'/shop'}>
+                        <button className="text-indigo-30 px-10 py-3 bg-white font-bold text-lg mt-4">
+                            Shop Now
+                        </button>
+                    </Link>
                 </div>
                 <div className="hidden md:block w-1/5"></div>
                 <div className="hidden sm:block w-2/5">

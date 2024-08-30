@@ -1,6 +1,7 @@
 import SinggleFavorite from "../carousels/SinggleFavorite";
 import Start from "../icons/Start";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 
 export default function Favorites() {
@@ -47,9 +48,11 @@ export default function Favorites() {
                           <h3 className="text-white font-bold text-4xl">50$</h3>
                        </div>
                        <p className="text-base text-gray-10">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam mollis, justo nec porttitor auctor, erat sapien faucibus lectus, vel tempor dolor augue et lectus. Proin et lacus blandit quam semper placerat. </p>
-                       <button className="text-indigo-30 px-10 py-3 bg-white font-bold text-lg">
-                       Shop Now
-                   </button>
+                       <Link to={'/shop'}>
+                        <button className="text-indigo-30 px-10 py-3 bg-white font-bold text-lg">
+                            Shop Now
+                        </button>
+                       </Link>
                 </div>
             </div>
         </div>
