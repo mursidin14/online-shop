@@ -7,12 +7,12 @@ export default function LoadProductDetail() {
         <div className="space-y-10 mx-auto">
              <h2 className="animate-pulse h-6 w-64 bg-gray-200 rounded"></h2>
              
-                     <Card
+                    <Card
                          className="w-64 h-64 bg-gray-200 animate-pulse"
                          imgAlt="Apple Watch Series 7 in colors pink, silver, and black"
                          imgSrc={""}
                          >
-                         </Card>
+                   </Card>
              
          </div>
          <div className="mx-3 sm:mx-0 space-y-5 mt-10 sm:mt-16">

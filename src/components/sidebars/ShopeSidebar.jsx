@@ -11,7 +11,7 @@ export default function ShopeSidebar() {
         <div
           key={index} 
           onClick={() => handleCategoryClick(category)} 
-          className={`group relative flex cursor-pointer rounded-lg bg-white/5 py-4 px-5 shadow-md transition focus:outline-none ${selectedCategory === category ? 'bg-indigo-30' : ''}`}
+          className={`group relative flex cursor-pointer rounded-lg py-4 px-5 shadow-md transition focus:outline-none ${selectedCategory === category ? 'bg-blue-30' : 'bg-white/5'}`}
         >
           <div className="flex w-full items-center justify-between">
             <div className="text-sm/6">
@@ -19,7 +19,7 @@ export default function ShopeSidebar() {
                 {category}
               </p>
             </div>
-            <CheckCircleIcon className={`size-6 fill-white transition ${selectedCategory === category ? 'opacity-100' : 'opacity-0'} bg-indigo-30`} />
+            <CheckCircleIcon className={`size-6 fill-white transition ${selectedCategory === category ? 'opacity-100' : 'opacity-0'} bg-blue-30`} />
           </div>
         </div>
       ))}

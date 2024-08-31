@@ -10,9 +10,9 @@ export default function Product() {
 
   return (
     <div className="w-full sm:max-w-6xl mx-auto flex justify-center">
-        {loading && <LoadProducts />}
         <div className="grid gap-4 grid-cols-1 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2">
         {
+          loading ? Array.from({length: 8}).map((_, i) => ( <LoadProducts key={i} /> )) :
            products.map((product) =>  (
             <Link key={product.id} to={`/products/${product.id}`}>
              <Card

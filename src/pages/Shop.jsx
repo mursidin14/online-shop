@@ -7,7 +7,7 @@ export default function Shop() {
     <>
       <ShopBanner />
       <ShopeCategory />
-      <div className="max-w-6xl mx-auto space-y-10 my-10">
+      <div className="w-1/2 sm:max-w-6xl mx-auto space-y-10 my-10">
           <h3 className="text-5xl text-center">Recommend Product</h3>
           <Recomended />
       </div>
