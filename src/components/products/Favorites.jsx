@@ -49,7 +49,7 @@ export default function Favorites() {
                        </div>
                        <p className="text-base text-gray-10">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam mollis, justo nec porttitor auctor, erat sapien faucibus lectus, vel tempor dolor augue et lectus. Proin et lacus blandit quam semper placerat. </p>
                        <Link to={'/shop'}>
-                        <button className="text-indigo-30 px-10 py-3 bg-white font-bold text-lg">
+                        <button className="text-indigo-30 dark:bg-dark-20 px-10 py-3 bg-white font-bold text-lg mt-3">
                             Shop Now
                         </button>
                        </Link>

@@ -1,6 +1,7 @@
 import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/react'
 import { ShoppingBagIcon, HeartIcon, UserIcon, MagnifyingGlassIcon, Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import { NavLink, Link } from "react-router-dom";
+import { useThemeContext } from '../context/ThemeContext';
 
 const Menus = [
     {name:"Home", link:"/", current:true},
@@ -10,8 +11,9 @@ const Menus = [
 ]
 
 export default function Navbar() {
+   const { theme, toggleTheme } = useThemeContext();
   return (
-    <Disclosure as="nav" className="fixed top-0 left-0 right-0 bg-white z-10 shadow-xl">
+    <Disclosure as="nav" className={`fixed top-0 left-0 right-0 ${theme === 'dark' ? "bg-dark-20" : "bg-white"} z-10 shadow-xl`}>
     <div className="mx-auto max-w-6xl px-2 sm:px-6 lg:px-8">
     <div className="relative flex h-16 items-center justify-between">
       <div className="inset-y-0 left-0 flex items-center sm:hidden">
@@ -26,7 +28,7 @@ export default function Navbar() {
       </div>
         <Link to="/" className="flex items-center">
             <img src="/logo.svg" alt="logo" />
-            <p className="font-bold font-sans ml-2 text-md">store</p>
+            <p className="font-bold font-sans ml-2 text-md dark:text-white">store</p>
         </Link>
         <div className="hidden sm:ml-6 sm:block">
             <div className="flex space-x-2 lg:space-x-8">
@@ -34,7 +36,7 @@ export default function Navbar() {
                     Menus.map(item => (    
                        <NavLink 
                         key={item.name} 
-                        className={({isActive}) => isActive ? "text-blue-30 font-bold text-lg" : "text-slate-900 font-mono text-lg"} 
+                        className={({isActive}) => isActive ? "text-blue-30 font-bold text-lg" : "text-slate-900 font-mono text-lg dark:text-white"} 
                         to={`${item.link}`}
                         >
                             {item.name}
@@ -43,8 +45,16 @@ export default function Navbar() {
                 }
             </div>
         </div>
+        <div onClick={toggleTheme} className='flex items-center text-base text-lg font-bold'>
+            {
+                theme === 'dark' ?
+                <button className="text-white border rounded-md py-1 px-2 ease-out duration-200">Light</button>
+                :
+                <button className="text-dark-20 border rounded-md py-1 px-2 ease-out duration-200">Dark</button>
+            }
+        </div>
         <div className="hidden sm:ml-6 sm:block">
-            <div className="flex items-center space-x-2 lg:space-x-5">
+            <div className="flex items-center space-x-2 lg:space-x-5 dark:text-white">
                 <ShoppingBagIcon className="text-current h-6" />
                 <HeartIcon className="text-current h-6" />
                 <UserIcon className="text-current h-6" />

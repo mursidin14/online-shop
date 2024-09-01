@@ -1,6 +1,6 @@
 
 export default function NotFound() {
   return (
-    <div>Not Found</div>
+    <div className="h-screen dark:bg-dark-20 dark:text-white">Not Found</div>
   )
 }

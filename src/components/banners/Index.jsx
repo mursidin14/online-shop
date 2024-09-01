@@ -10,11 +10,11 @@ export default function Index() {
                     <h1 className="text-white font-bold text-5xl font-sans leading-normal">
                         Get the Latest Dress Models From Us
                     </h1>
-                    <p className="text-lg text-gray-10 text-base">
+                    <p className="text-lg text-gray-10 dark:text-white text-base">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eget gravida leo, nec iaculis diam. Nam bibendum mi sed sem finibus ullamcorper.
                     </p>
                     <Link to={'/shop'}>
-                        <button className="text-indigo-30 px-10 py-3 bg-white font-bold text-lg mt-4">
+                        <button className="text-indigo-30 dark:bg-dark-20 px-10 py-3  bg-white font-bold text-lg mt-4">
                             Shop Now
                         </button>
                     </Link>

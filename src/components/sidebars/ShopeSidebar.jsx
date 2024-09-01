@@ -15,7 +15,7 @@ export default function ShopeSidebar() {
         >
           <div className="flex w-full items-center justify-between">
             <div className="text-sm/6">
-              <p className={`font-semibold transition ${selectedCategory === category ? 'text-white' : 'text-dark-10'}`}>
+              <p className={`font-semibold transition ${selectedCategory === category ? 'text-white' : 'text-dark-10'} dark:text-white`}>
                 {category}
               </p>
             </div>

@@ -63,11 +63,11 @@ export default function Testimoni() {
                     </div>
                     <div className="min-w-0 flex-1">
                         <p className="text-base font-bold">{item.name}</p>
-                        <p className="text-xs text-gray-30">{item.client}</p>
+                        <p className="text-xs text-gray-30 dark:text-white">{item.client}</p>
                     </div>
                 </div>
                 <Start />
-                <p className="text-lg text-gray-40">“Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec rutrum dapibus luctus.“ </p>
+                <p className="text-lg text-gray-40 dark:text-white">“Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec rutrum dapibus luctus.“ </p>
            </Card>
                 </div>
             ))

@@ -2,6 +2,6 @@
 
 export default function AbouteUs() {
   return (
-    <div>Aboute Us</div>
+    <div className="h-screen dark:bg-dark-20 dark:text-white">Aboute Us</div>
   )
 }

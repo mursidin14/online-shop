@@ -6,24 +6,24 @@ import Instagram from "../assets/icons/instagram.svg";
 
 export default function Footer() {
   return (
-    <div className="bg-dark-20">
+    <div className="bg-dark-20 dark:bg-gray-200 dark:text-dark-20">
         <div className="flex flex-wrap lg:flex-nowrap justify-between items-center min-h-96 max-w-6xl mx-5 lg:mx-auto">
             <div className="w-full sm:w-2/5 space-y-5 my-3 sm:my-0">
                 <Link to="/" className="flex items-center">
                     <img src="logo.svg" alt="logo" />
-                    <p className="font-bold font-sans ml-2 text-md text-white">store</p>
+                    <p className="font-bold font-sans ml-2 text-md text-white dark:text-dark-20">store</p>
                 </Link>
-                <p className="text-gray-20 text-sm">
+                <p className="text-gray-20 text-sm dark:text-dark-20">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam mollis, justo nec porttitor auctor, erat sapien faucibus lectus, vel tempor dolor augue et lectus. 
                 </p>
-                <button className="text-indigo-30 px-10 py-3 bg-white font-bold text-lg">
+                <button className="text-indigo-30 px-10 py-3 bg-white dark:bg-dark-20 font-bold text-lg">
                        Login Now
                 </button>
             </div>
             <div className="w-full my-3 sm:my-0 sm:w-2/5 sm:mx-4 ">
-                <div className="grid grid-cols-3 text-white">
+                <div className="grid grid-cols-3 text-white dark:text-dark-20">
                     <div className="space-y-3">
-                        <h3 className="font-bold text-white text-lg">Home</h3>
+                        <h3 className="font-bold text-white dark:text-dark-20 text-lg">Home</h3>
                         <div className="space-y-2">
                             <ul>
                                 <li>
@@ -42,7 +42,7 @@ export default function Footer() {
                         </div>
                     </div>
                     <div className="space-y-3">
-                    <h3 className="font-bold text-white text-lg">Shop</h3>
+                    <h3 className="font-bold text-white dark:text-dark-20 text-lg">Shop</h3>
                     <div className="space-y-2">
                         <ul>
                             <li>
@@ -61,7 +61,7 @@ export default function Footer() {
                     </div>
                 </div>
                     <div className="space-y-3">
-                        <h3 className="font-bold text-white text-lg">Categories</h3>
+                        <h3 className="font-bold text-white dark:text-dark-20 text-lg">Categories</h3>
                         <div className="space-y-2">
                             <ul>
                                 <li>
@@ -81,7 +81,7 @@ export default function Footer() {
                     </div>
                 </div>
             </div>
-            <div className="w-full sm:w-1/5 text-white my-3 sm:my-0 sm:mb-10">
+            <div className="w-full sm:w-1/5 text-white dark:text-dark-20 my-3 sm:my-0 sm:mb-10">
                     <h3 className="font-bold text-lg">Contact</h3>
                     <div className="space-y-2">
                         <span>Mangcoding@gmail.com</span>
