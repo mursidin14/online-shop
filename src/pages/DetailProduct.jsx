@@ -57,6 +57,7 @@ useEffect(() => {
                 <Breadcrumb.Item>Product Detail</Breadcrumb.Item>
             </Breadcrumb>
             {
+            productById <= 0 ? <h2 className="h-screen text-3xl italic">Data Empty...</h2> :
             productById ? (
             <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 mx-auto">
             <div className="space-y-10 mx-auto">

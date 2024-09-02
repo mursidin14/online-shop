@@ -86,10 +86,18 @@ export default function Footer() {
                     <div className="space-y-2">
                         <span>Mangcoding@gmail.com</span>
                         <div className="flex space-x-2">
-                            <img src={Facebook} alt="facebook" />
-                            <img src={Twetter} alt="twetter" />
-                            <img src={Linkedin} alt="linkedin" />
-                            <img src={Instagram} alt="instagram" />
+                            <a href="#">
+                                <img src={Facebook} alt="facebook" />
+                            </a>
+                            <a href="#">
+                                <img src={Twetter} alt="twetter" />
+                            </a>
+                            <a href="#">
+                                <img src={Linkedin} alt="linkedin" />
+                            </a>
+                            <a href="#">
+                                <img src={Instagram} alt="instagram" />
+                            </a>
                         </div>
                     </div>
             </div>

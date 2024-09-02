@@ -13,6 +13,8 @@ export default function Product() {
         <div className="grid gap-4 grid-cols-1 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2">
         {
           loading ? Array.from({length: 4}).map((_, i) => ( <LoadProducts key={i} /> )) :
+          products.length <= 0 ?
+          <h2 className="h-screen text-3xl italic">Data Empty...</h2> :
              (selectedCategory ? productByCategory : products).map((product) => (
             <Link key={product.id} to={`/products/${product.id}`}>
             <Card
