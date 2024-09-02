@@ -1,10 +1,16 @@
 import Banner from '../../assets/banners/banner.png';
 import { Link } from 'react-router-dom';
+import { Breadcrumb } from 'flowbite-react';
 
 export default function Index() {
   return (
     <div className="bg-gradient-to-b from-blue-30 to-indigo-30 sm:mt-10">
         <div className="w-full mx-auto sm:max-w-6xl py-16">
+           <Breadcrumb className="mb-5">
+                <Breadcrumb.Item>
+                    Home
+                </Breadcrumb.Item>
+            </Breadcrumb>
             <div className="flex justify-center sm:justify-between items-center">
                 <div className="w-5/6 sm:w-2/5 space-y-7">
                     <h1 className="text-white font-bold text-5xl font-sans leading-normal">
