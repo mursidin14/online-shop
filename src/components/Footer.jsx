@@ -10,7 +10,7 @@ export default function Footer() {
         <div className="flex flex-wrap lg:flex-nowrap justify-between items-center min-h-96 max-w-6xl mx-5 lg:mx-auto">
             <div className="w-full sm:w-2/5 space-y-5 my-3 sm:my-0">
                 <Link to="/" className="flex items-center">
-                    <img src="logo.svg" alt="logo" />
+                    <img src="/logo.svg" alt="logo" />
                     <p className="font-bold font-sans ml-2 text-md text-white dark:text-dark-20">store</p>
                 </Link>
                 <p className="text-gray-20 text-sm dark:text-dark-20">

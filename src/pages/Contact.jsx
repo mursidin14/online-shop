@@ -1,5 +1,5 @@
 import ContactBanner from "../components/banners/ContactBanner";
-import CardContact from "../components/icons/cards/CardContact";
+import CardContact from "../components/cards/CardContact";
 import LocationIcon from "../assets/icons/location.svg";
 import ContactIcon from "../assets/icons/contact.svg";
 

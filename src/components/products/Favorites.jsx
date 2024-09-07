@@ -32,7 +32,7 @@ export default function Favorites() {
                                 <input type="radio" className="bg-gray-100" />
                             </div>
                           </div>
-                          <Start span={"(20k)"} />
+                          <Start span={"5.0"} />
                        </div>
                        <div className="flex items-center justify-between">
                           <>

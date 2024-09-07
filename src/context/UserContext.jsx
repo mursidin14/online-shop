@@ -8,6 +8,7 @@ export const UserStateContext = createContext();
 export default function UserContextProvider({children}) {
     const [products, setProducts] = useState([]);
     const [categories, setCategories] = useState([]);
+    const [cart, setCart] = useState([]);
     const [productByCategory, setProductByCategory] = useState([]);
     const [selectedCategory, setSelectedCategory] = useState('');
     const [loading, setLoading] = useState(true);
@@ -54,6 +55,16 @@ export default function UserContextProvider({children}) {
         setSelectedCategory(category);
     };
 
+    const addToCart = (product) => {
+        const existIncart = cart.find((item) => item.id === product.id);
+
+        if(existIncart) {
+            setCart(cart.map((item) => item.id === product.id ? {...item, quantity: item.quantity + 1} : item))
+        }else {
+            setCart([...cart, {product, quantity: 1}])
+        }
+    }
+
 
   return (
     <UserStateContext.Provider 
@@ -63,7 +74,9 @@ export default function UserContextProvider({children}) {
             productByCategory,
             selectedCategory,
             handleCategoryClick,
-            loading
+            loading,
+            cart,
+            addToCart,
         }}
     >
         {children}

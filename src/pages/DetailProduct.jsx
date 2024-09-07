@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
-import Start from "../components/icons/Start";
+import FullStart from "../components/icons/FullStart";
+import HalfStart from "../components/icons/HalfStart";
+import EmptyStart from "../components/icons/EmptyStart";
 import BasketImg from "../assets/icons/basket.svg";
 import { MinusIcon, PlusIcon, ShoppingBagIcon } from "@heroicons/react/24/outline";
 import { useLocation, useParams } from "react-router-dom";
@@ -46,6 +48,27 @@ useEffect(() => {
     window.scrollTo(0, 0)
 }, [location, id])
 
+const renderStart = (rating) => {
+    const fullStart = Math.floor(rating);
+    const halfStart = rating % 1 !== 0;
+    const starts = [];
+
+    for(let i = 0; i < fullStart; i++){
+        starts.push(<FullStart />)
+    }
+
+    if(halfStart) {
+        starts.push(<HalfStart />)
+    }
+
+    const emptyStars = 5 - starts.length;
+    for(let i = 0; i < emptyStars; i++){
+        starts.push(<EmptyStart />)
+    }
+
+    return starts;
+}
+
   return (
     <div className="w-full dark:bg-dark-20 dark:text-white">
         <div className="max-w-6xl mx-auto py-28">
@@ -74,7 +97,10 @@ useEffect(() => {
                 <div className="mx-3 sm:mx-0 space-y-5 mt-10 sm:mt-20">
                     <h3 className="text-5xl font-bold">{productById.title}</h3>
                     <p className="text-gray-30 dark:text-white text-base">{productById.description}</p>
-                    <Start span={'(2k)'} />
+                    <div className="flex items-center mt-2">
+                        {renderStart(productById.rating.rate)}
+                        <small className="text-sm text-gray-400 ml-2">{`stock (${productById.rating.count})`}</small>
+                    </div>
                     <div className="flex justify-between">
                         <div className="space-x-2">
                             <input type="radio" className="bg-black" />

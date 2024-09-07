@@ -2,6 +2,7 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/react
 import { ShoppingBagIcon, HeartIcon, UserIcon, MagnifyingGlassIcon, Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import { NavLink, Link } from "react-router-dom";
 import { useThemeContext } from '../context/ThemeContext';
+import { useUserContext } from '../context/UserContext';
 
 const Menus = [
     {name:"Home", link:"/", current:true},
@@ -12,6 +13,12 @@ const Menus = [
 
 export default function Navbar() {
    const { theme, toggleTheme } = useThemeContext();
+   const { cart } = useUserContext();
+
+   const getTotalQuantity = () => {
+     return cart.reduce((total, item) => total + item.quantity, 0)
+   }
+
   return (
     <Disclosure as="nav" className={`fixed top-0 left-0 right-0 ${theme === 'dark' ? "bg-dark-20" : "bg-white"} z-10 shadow-xl`}>
     <div className="mx-auto max-w-6xl px-2 sm:px-6 lg:px-8">
@@ -55,7 +62,14 @@ export default function Navbar() {
         </div>
         <div className="hidden sm:ml-6 sm:block">
             <div className="flex items-center space-x-2 lg:space-x-5 dark:text-white">
-                <ShoppingBagIcon className="text-current h-6" />
+                <div className="cursor-pointer relative">
+                    <ShoppingBagIcon className="text-current h-6" />
+                    {getTotalQuantity() > 0 && (
+                        <span className="absolute top-0 right-0 bg-red-500 text-white rounded-full h-4 w-4 flex items-center justify-center text-xs">
+                          {getTotalQuantity()}
+                        </span>
+                    )}
+                </div>
                 <HeartIcon className="text-current h-6" />
                 <UserIcon className="text-current h-6" />
 

@@ -1,12 +1,35 @@
 import { useUserContext } from "../../context/UserContext";
 import { Card } from "flowbite-react";
 import { Link } from "react-router-dom";
-import Start from "../icons/Start";
+import FullStart from "../icons/FullStart";
+import HalfStart from "../icons/HalfStart";
+import EmptyStart from "../icons/EmptyStart";
 import LoadProducts from "../loads/LoadProducts";
 
 export default function Product() {
 
     const { selectedCategory, productByCategory, products, loading } = useUserContext()
+
+    const renderStart = (rating) => {
+      const fullStart = Math.floor(rating);
+      const halfStart = rating % 1 !== 0;
+      const starts = [];
+
+      for(let i = 0; i < fullStart; i++){
+        starts.push(<FullStart />)
+      }
+
+      if(halfStart) {
+        starts.push(<HalfStart />)
+      }
+
+      const emptyStart = 5 - starts.length;
+      for(let i = 0; i < emptyStart; i++){
+        starts.push(<EmptyStart />)
+      }
+
+      return starts;
+    }
 
   return (
     <div className="w-full sm:max-w-6xl mx-auto flex justify-center">
@@ -31,7 +54,12 @@ export default function Product() {
                   </h5>
               </div>
               <p className="text-sm">{`${product.description ? product.description.substring(0, 100) + "..." : product.description}`}</p>
-              <Start span={"5.0"} />
+              <div className="mt-2 flex items-center">
+                {renderStart(product.rating.rate)}
+                <div className="flex justify-end w-full">
+                  <small className="text-sm text-gray-400">{`stock (${product.rating.count})`}</small>
+                </div>
+              </div>
         </Card>
         </Link>
                 ))

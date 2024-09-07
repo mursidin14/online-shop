@@ -66,7 +66,7 @@ export default function Testimoni() {
                         <p className="text-xs text-gray-30 dark:text-white">{item.client}</p>
                     </div>
                 </div>
-                <Start />
+                <Start span={"5.0"} />
                 <p className="text-lg text-gray-40 dark:text-white">“Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec rutrum dapibus luctus.“ </p>
            </Card>
                 </div>
